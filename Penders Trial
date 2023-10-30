@@ -19,6 +19,8 @@ def commandSoldiers():
         enemy = soldier.findNearestEnemy()
         if enemy:
             hero.command(soldier, "attack", enemy)
+        else:
+            hero.command(archer, "move", Vector(25, 21))
             
 def commandArchers():
     archers = hero.findByType("archer")
