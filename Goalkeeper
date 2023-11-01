@@ -1,0 +1,12 @@
+ball = hero.findNearest(hero.findByType("ball"))
+peasants = hero.findByType("peasant")
+
+while True:
+    if ball.pos.x < 26:
+        while ball.pos.x < 26:
+            hero.command(peasants[0], "move", {'x': 19, 'y': ball.pos.y + 1})
+            hero.command(peasants[1], "move", {'x': 19, 'y': ball.pos.y - 1})
+            hero.wait(0.1)
+    else:
+        hero.command(peasants[0], "move", {'x': 19, 'y': 40})
+        hero.command(peasants[1], "move", {'x': 19, 'y': 40})
