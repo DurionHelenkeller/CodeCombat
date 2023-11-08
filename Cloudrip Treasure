@@ -1,0 +1,23 @@
+# Your goal is to collect coins / gems.
+# This level is repeatable. If you win, the difficulty and rewards will increase.
+# If you fail, you have to wait a day to resubmit.
+# This level is an optional challenge level. You don't need to beat it to continue the campaign!
+while True:
+    enemy = hero.findNearestEnemy()
+    items = hero.findNearestItem()
+    friends = hero.findFriends()
+    if hero.gold >= hero.costOf("soldier"):
+        hero.summon("soldier")
+    for item in items:
+        for friend in friends:
+            if friend.type == "peasant":
+                item = friend.findNearestItem()
+                if item:
+                    hero.command(friend, "move", {'x': item.pos.x, 'y': item.pos.y})
+                else:
+                    friend.moveXY(hero.pos.x, hero.pos.y)
+            else:
+                enemy = friend.findNearestEnemy()
+                if enemy:
+                    hero.command(friend, "attack", enemy)
+    
