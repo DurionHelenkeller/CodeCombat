@@ -1,0 +1,13 @@
+def chooseTarget(friend):
+    nearestwitch = friend.findNarest(hero.findByType("witch"))
+    enemy = friend.findNearestEnemy
+    
+    if nearestwitch and friend.type == "soldier":
+        hero.command(friend, "attack" nearestwitch)
+
+while True:
+    friends = hero.findFriends()
+    for friend in friends:
+        # Use your chooseTarget function to decide what to attack.
+        chooseTarget(friend)
+        pass
