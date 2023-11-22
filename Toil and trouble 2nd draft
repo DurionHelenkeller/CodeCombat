@@ -11,7 +11,7 @@ def chooseTarget(friend):
         hero.command(friend, "attack" nearestwitch)
     elif nearestwitch and friend.type == "archer":
         hero.command(friend, "attack", enemy)
-    elif if enemy and friend.type == "soldier":
+    elif enemy and friend.type == "soldier":
         hero.command(friend, "attack", enemy)
 
 while True:
