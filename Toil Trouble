@@ -1,6 +1,6 @@
 def chooseTarget(friend):
     nearestwitch = friend.findNarest(hero.findByType("witch"))
-    enemy = friend.findNearestEnemy
+    enemy = friend.findNearestEnemy()
     
     if nearestwitch and friend.type == "soldier":
         hero.command(friend, "attack" nearestwitch)
