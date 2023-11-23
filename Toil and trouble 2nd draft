@@ -9,7 +9,7 @@ def chooseTarget(friend):
     
     if nearestwitch and friend.type == "soldier":
         hero.command(friend, "attack" nearestwitch)
-    elif nearestwitch and friend.type == "archer":
+    elif enemy and friend.type == "archer":
         hero.command(friend, "attack", enemy)
     elif enemy and friend.type == "soldier":
         hero.command(friend, "attack", enemy)
