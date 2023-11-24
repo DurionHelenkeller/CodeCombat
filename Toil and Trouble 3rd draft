@@ -1,0 +1,20 @@
+# Ogre Witches have some unpleasant surprises ready for you.
+
+# Define a chooseTarget function which takes a friend argument
+# Returns the a target to attack, depending on the type of friend.
+# Soldiers should attack the witches, archers should attack nearest enemy.
+def chooseTarget(friend):
+    nearestwitch = friend.findNarest(hero.findByType("witch"))
+    enemy = friend.findNearestEnemy()
+    
+    if enemy and friend.type == "archer":
+        hero.command(friend, "attack", enemy)
+    elif enemy and friend.type == "soldier":
+        hero.command(friend, "attack", nearestwitch)
+
+while True:
+    friends = hero.findFriends()
+    for friend in friends:
+        # Use your chooseTarget function to decide what to attack.
+        chooseTarget(friend)
+        pass
