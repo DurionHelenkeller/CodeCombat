@@ -10,7 +10,6 @@ def attack(enemy):
     if enemy:
         hero.attack(enemy)
         
-        
 def drinkPotion(item):
     item = hero.findNearestItem()
     if item and item.type != "poison":
@@ -23,12 +22,13 @@ hazards = hero.findHazards()
 max = 0
 min = 999
 for hazard in hazards:
-    if hazard.value> max:
+    if hazard.value > max:
         max = hazard.value
-    if hazard.value< min:
+    if hazard.value < min:
         min = hazard.value
-hero.say(max + min)
-while True: 
+    hero.say(max + min)
+while True:
+    
     enemy = hero.findNearestEnemy()
     item = hero.findNearestItem()
     if enemy:
