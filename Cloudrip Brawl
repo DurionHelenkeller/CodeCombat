@@ -1,0 +1,13 @@
+hero.summon("soldier")
+while True:
+    friends = hero.findByType("soldier")
+    item = hero.findNearestItem()
+    enemy = hero.findNearestEnemy()
+    
+    if hero.gold >= hero.costOf("soldier"):
+        hero.summon("soldier")
+    elif enemy:
+        for friend in friends:
+            hero.command(friend, "attack", enemy)
+    else:
+        hero.move(item.pos)
