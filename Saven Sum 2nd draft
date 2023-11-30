@@ -26,7 +26,7 @@ for hazard in hazards:
         max = hazard.value
     if hazard.value < min:
         min = hazard.value
-    hero.say(max + min)
+hero.say(max + min)
 while True:
     
     enemy = hero.findNearestEnemy()
