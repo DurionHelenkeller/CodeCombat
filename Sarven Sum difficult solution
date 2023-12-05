@@ -1,0 +1,40 @@
+# To disable the fire-traps add the lowest trap.value to the highest value.
+# Move to the white X and say the answer to Kitty the cougar.
+# Defeat all the ogres if you dare.
+# Once all ogres are defeated move to the red X.
+# Look out for potions to boost your health.
+points = {'x': 65, 'y': 103}, {'x': 69, 'y': 28}, {'x': 122, 'y': 78}, {'x': 151, 'y': 118}
+
+def attack(enemy):
+    enemy = hero.findNearestEnemy()
+    if enemy:
+        hero.attack(enemy)
+        
+def drinkPotion(item):
+    item = hero.findNearestItem()
+    if item and item.type != "poison":
+        hero.moveXY(item.pos.x, item.pos.y)
+
+whiteX = {'x':27, 'y':42}
+redX = {'x':151 , 'y': 118}
+hero.moveXY(whiteX.x, whiteX.y)
+hazards = hero.findHazards()
+max = 0
+min = 999
+for hazard in hazards:
+    if hazard.value > max:
+        max = hazard.value
+    if hazard.value < min:
+        min = hazard.value
+hero.say(max + min)
+while True:
+    
+    enemy = hero.findNearestEnemy()
+    item = hero.findNearestItem()
+    if enemy:
+        hero.attack(enemy)
+    elif item:
+        drinkPotion(item)
+    else:
+        hero.move({"x": 151, "y": 120})
+        continue
