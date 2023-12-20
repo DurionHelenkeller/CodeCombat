@@ -15,16 +15,17 @@ def lowestHealthPaladin():
     return lowestFriend
 
 def commandPaladin(paladin):
-    if (paladin.canCast("heal")):
-        target = lowestHealthPaladin()
-        if target:
-            hero.command(paladin, "cast", "heal", target)
-    elif (paladin.health < 200):
-        hero.command(paladin, "shield")
+    # Heal the paladin with the lowest health using lowestHealthPaladin()
+    # You can use paladin.canCast("heal") and command(paladin, "cast", "heal", target)
+    # Paladins can also shield: command(paladin, "shield")
+    # And don't forget, they can attack, too!
+    
+    if paladin.canCast("heal", paladin) and paladin.health < paladin.maxHealth:
+        hero.command(paladin, "cast", "heal", paladin)
     else:
-        target = paladin.findNearestEnemy()
-        if (target):
-            hero.command(paladin, "attack", target)
+        enemy = paladin.findNearestEnemy()
+        hero.command(paladin, "attack", enemy)
+    pass
 
 def commandPeasant(peasant):
     item = peasant.findNearestItem()
