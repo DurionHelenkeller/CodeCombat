@@ -1,0 +1,11 @@
+while True:
+    friends = hero.findFriends()
+  # Use for-loop and for each friend:
+    for friend in friends:
+    #    # If they see an enemy then command to attack.
+        enemy = friend.findNearestEnemy()
+        if enemy:
+            hero.command(friend, "attack", enemy)
+        else:
+            hero.command(friend, "move", {'x': friend.pos.x + 5, 'y' : friend.pos.y})
+       
