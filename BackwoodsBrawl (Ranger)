@@ -1,0 +1,9 @@
+while True:
+    enemy = hero.findNearestEnemy()
+    if enemy:
+        if hero.isReady("phase-shift"):
+            hero.phaseShift()
+        else:
+            hero.scattershot()
+    else:
+        hero.attack(enemy)
