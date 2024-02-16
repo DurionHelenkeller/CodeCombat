@@ -1,0 +1,14 @@
+while True:
+    flag = hero.findFlag()
+    enemy = hero.findNearestEnemy()
+    if flag:
+        hero.pickUpFlag(flag)
+    if enemy:
+        hero.scattershot(enemy)
+    else:
+        if hero.gold >= hero.costOf("soldier"):
+            hero.summon("soldier")
+        else:
+            if enemy:
+                for friend in friends:
+                    hero.command(friend, "attack", enemy)
