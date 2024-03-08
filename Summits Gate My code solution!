@@ -45,3 +45,10 @@ while True:
     commandPaladins()
     heroAttack()
     
+while True:
+    flag()
+    commandSoldiers()
+    commandArchers()
+    commandPaladins()
+    heroAttack()
+    
