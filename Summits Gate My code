@@ -1,0 +1,47 @@
+def commandSoldiers():
+    targets = hero.findByType("soldier")
+    for target in targets:
+        enemy = target.findNearestEnemy()
+        if enemy and target.team == "humans":
+            hero.command(target, "attack", enemy)
+        elif target.team == "humans":
+            hero.command(target, "defend", hero.pos)
+            
+        
+def commandArchers():
+    targets = hero.findByType("archer")
+    for target in targets:
+        enemy = target.findNearestEnemy()
+        if enemy and target.team == "humans":
+            hero.command(target, "attack", enemy)
+        elif target.team == "humans":
+            hero.command(target, "defend", hero.pos)
+            
+def commandPaladins():
+    targets = hero.findByType("paladin")
+    for target in targets:
+        enemy = hero.findNearestEnemy()
+        if hero.health < hero.maxHealth and target.team == "humans":
+            hero.command(target, "cast", "heal", hero)
+        elif target.team == "humans" and enemy:
+            hero.command(target, "attack", enemy)
+        elif target.team == "humans":
+            hero.command(target, "defend", hero.pos)
+            
+def flag():
+    flag = hero.findFlag()
+    if flag:
+        hero.pickUpFlag(flag)
+        
+def heroAttack():
+    enemy = hero.findNearestEnemy()
+    if enemy:
+        hero.scattershot(enemy)
+        
+while True:
+    flag()
+    commandSoldiers()
+    commandArchers()
+    commandPaladins()
+    heroAttack()
+    
