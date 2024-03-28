@@ -1,0 +1,3 @@
+friends = hero.findFriends()
+for friend in friends:
+    hero.command(friend, "buildXY", "palisade", 25, 40) 
