@@ -1,0 +1,19 @@
+# Use flags to tell your players where to ram the ball.
+# Use removeFlag when a player gets close to a flag.
+while True:
+    friend = hero.findFriends()
+    greenFlag = friend.findFlag()
+    if flag and friend[0]:
+        hero.pickUpFlag(greenFlag)
+        
+while True:
+    friend = hero.findFriends()
+    pinkFlag = friend.findFlag()
+    if flag and friend[1]:
+        hero.pickUpFlag(pinkFlag)
+        
+while True:
+    friend = hero.findFriends()
+    blackFlag = friend.findFlag()
+    if flag and friend[2]:
+        hero.pickUpFlag(blackFlag)        
