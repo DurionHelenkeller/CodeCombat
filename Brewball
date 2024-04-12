@@ -1,0 +1,21 @@
+# Say anything within 10m of Omarn for him to throw a potion.
+# Catch the potion by standing near it before it lands.
+# DO NOT LET THE POTION LAND ON THE GROUND!
+
+while True:
+    potion = hero.findFriendlyMissiles()[0]
+    firetraps = hero.findHazards()
+    # Remember that a Fire Trap will trigger if you move closer than 3 meters!
+    omarn = hero.findByType("potion-master")[0]
+    if potion:
+        dest = potion.targetPos
+        # Go get the potion.
+        hero.moveXY(dest.x, dest.y)
+        # Warning: isPathClear doesn't work with Hazards!
+    else:
+        if omarn and hero.distanceTo(omarn) > 10:
+            # Move back to Omarn.
+            hero.moveXY(14, 34)
+            pass
+        else:
+            hero.say("Hup, hup!")
