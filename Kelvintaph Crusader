@@ -67,3 +67,4 @@ while True:
         hero.attack(catapult)
     else:
         hero.moveXY(78, 14)
+
