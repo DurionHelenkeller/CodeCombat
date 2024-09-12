@@ -12,7 +12,6 @@ print(f"Random Number: {numbers}")
 
 # User enters his/her name
 name = input("What is your name? ").title()
-message = (f"I am sorry {name}, You've used all your guesses. The number you were looking for was {numbers}.")
 
 # Print the variable and a message of instruction for the game
 print(f"Hi {name}! Time to guess a number between 1 and 100!")
@@ -30,6 +29,6 @@ for number in range(1, 7):
     elif guess > numbers:
         print("That guess is too high")
         continue
-    print(message)
+    print(f"I am sorry {name}, You've used all your guesses. The number you were looking for was {numbers}."))
 
      
