@@ -1,7 +1,6 @@
 # Andres Martin, Milestone 2 September 12, 2024
 # Imports random variable
 import random
-import time
 
 # Random number generated and printed
 # numbers = range(1, 101)
