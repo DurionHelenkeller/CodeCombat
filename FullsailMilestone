@@ -29,6 +29,6 @@ for number in range(1, 7):
         print("That guess is too low")
     elif guess > numbers:
         print("That guess is too high")
-    elif number == 7:
-        continue
-    print(f"Hi {name}! Time to guess a number between 1 and 100!")
+    else:
+        print(message)
+    
